@@ -33,16 +33,21 @@ header{
     position: absolute;
     top:30px;
     left:-20px;
+    padding:2px;
+    border-radius: 4px;
 }
 #computer-lable{
     position: absolute;
     top:30px;
     right:-30px;
+    padding:2px;
+    border-radius: 4px;
 }
 .btns{
     display:flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: 40px;
     
     
     
@@ -88,18 +93,24 @@ body{
     color:whitesmoke
 }
 .extra{
+    
+    display:none;
+}
+.extraShow{
     /*text-align: center;*/
 	
 	padding: 5px;
     margin-top: 10px;
     margin-bottom:10px;
+    
 }
-.extra table {
+ table {
 	/*border: 1px solid red; */
     border: 5px solid gray;
     border-radius: 5%;
     max-width:230px;         
 	margin: 0 auto;
+    padding: 10px;
 	
 }
  th {
@@ -115,7 +126,7 @@ td{
     color:whitesmoke
 }
 .coloumn1{
-    padding-left: 100px;
+    padding-left: 70px;
 }
 #user_extra{
     border-radius: 50%;

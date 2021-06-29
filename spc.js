@@ -8,6 +8,7 @@ const scissor_div=document.getElementById("s");
 const res_p=document.getElementById("paragraph");
 const user_extra_td=document.getElementById("user_extra")
 const computer_extra_td=document.getElementById("computer_extra")
+const hidden_div=document.getElementById("ext");
 const userWord="(user)".fontsize(3).sub();
 const compWord="(comp)".fontsize(3).sub();
 
@@ -49,6 +50,8 @@ function win(user_Choice,computer_Choice){
     computerScore_span.innerHTML=computerScore;
     userData(user_Choice)
     computerData(computer_Choice)
+    hidden_div.classList.remove("extra")
+    hidden_div.classList.add("extraShow")
     res_p.innerHTML=`${convertWord(user_Choice)}${userWord} beats ${convertWord(computer_Choice)}${compWord}.You Win 🔥`;
     document.getElementById(user_Choice).classList.add('gold-glow')
     setTimeout(function(){document.getElementById(user_Choice).classList.remove('gold-glow')
@@ -61,6 +64,8 @@ function lose(user_Choice,computer_Choice){
     computerScore_span.innerHTML=computerScore;
     userData(user_Choice)
     computerData(computer_Choice)
+    hidden_div.classList.remove("extra")
+    hidden_div.classList.add("extraShow")
     res_p.innerHTML=`${convertWord(user_Choice)}${userWord} get's defeated to the ${convertWord(computer_Choice)}${compWord}.You Lose 💩`;
     document.getElementById(user_Choice).classList.add('red-glow')
     setTimeout(function(){document.getElementById(user_Choice).classList.remove('red-glow')
@@ -71,6 +76,8 @@ function draw(user_Choice,computer_Choice){
     res_p.innerHTML=`${convertWord(user_Choice)}${userWord} equal's to the ${convertWord(computer_Choice)}${compWord}.DRAW🙂`;
     userData(user_Choice)
     computerData(computer_Choice)
+    hidden_div.classList.remove("extra")
+    hidden_div.classList.add("extraShow")
     document.getElementById(user_Choice).classList.add('grey-glow')
     setTimeout(function(){document.getElementById(user_Choice).classList.remove('grey-glow')
 
