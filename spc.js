@@ -6,9 +6,38 @@ const rock_div = document.getElementById("r");
 const paper_div=document.getElementById("p");
 const scissor_div=document.getElementById("s");
 const res_p=document.getElementById("paragraph");
+const user_extra_td=document.getElementById("user_extra")
+const computer_extra_td=document.getElementById("computer_extra")
 const userWord="(user)".fontsize(3).sub();
 const compWord="(comp)".fontsize(3).sub();
-//console.log(rock_div)
+
+function computerData(choice){
+    if(choice=='p') {
+        computer_extra_td.src="paper.jpeg"
+    }
+    else if(choice=='r') {
+        computer_extra_td.src="rock-3.png"
+    }
+    else {
+        computer_extra_td.src="scissor.png"
+    }
+    console.log(choice,user_extra_td)
+
+}
+
+function userData(choice){
+    if(choice=='p') {
+        user_extra_td.src="paper.jpeg"
+    }
+    else if(choice=='r') {
+        user_extra_td.src="rock-3.png"
+    }
+    else {
+        user_extra_td.src="scissor.png"
+    }
+    
+
+}
 function convertWord(letter){
     if(letter==="p") return "Paper"
     if(letter==="r") return  "Rock"
@@ -18,6 +47,8 @@ function win(user_Choice,computer_Choice){
     userScore=userScore+1;
     userScore_span.innerHTML=userScore;
     computerScore_span.innerHTML=computerScore;
+    userData(user_Choice)
+    computerData(computer_Choice)
     res_p.innerHTML=`${convertWord(user_Choice)}${userWord} beats ${convertWord(computer_Choice)}${compWord}.You Win 🔥`;
     document.getElementById(user_Choice).classList.add('gold-glow')
     setTimeout(function(){document.getElementById(user_Choice).classList.remove('gold-glow')
@@ -28,6 +59,8 @@ function lose(user_Choice,computer_Choice){
     computerScore=computerScore+1;
     userScore_span.innerHTML=userScore;
     computerScore_span.innerHTML=computerScore;
+    userData(user_Choice)
+    computerData(computer_Choice)
     res_p.innerHTML=`${convertWord(user_Choice)}${userWord} get's defeated to the ${convertWord(computer_Choice)}${compWord}.You Lose 💩`;
     document.getElementById(user_Choice).classList.add('red-glow')
     setTimeout(function(){document.getElementById(user_Choice).classList.remove('red-glow')
@@ -36,6 +69,8 @@ function lose(user_Choice,computer_Choice){
 }
 function draw(user_Choice,computer_Choice){
     res_p.innerHTML=`${convertWord(user_Choice)}${userWord} equal's to the ${convertWord(computer_Choice)}${compWord}.DRAW🙂`;
+    userData(user_Choice)
+    computerData(computer_Choice)
     document.getElementById(user_Choice).classList.add('grey-glow')
     setTimeout(function(){document.getElementById(user_Choice).classList.remove('grey-glow')
 

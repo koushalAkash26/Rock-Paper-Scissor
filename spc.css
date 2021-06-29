@@ -87,6 +87,44 @@ body{
     font-size: xx-large;
     color:whitesmoke
 }
+.extra{
+    /*text-align: center;*/
+	
+	padding: 5px;
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+.extra table {
+	/*border: 1px solid red; */
+    border: 5px solid gray;
+    border-radius: 5%;
+    max-width:230px;         
+	margin: 0 auto;
+	
+}
+ th {
+    text-align: center;
+    font-size: x-large;
+    color:whitesmoke
+    
+
+}
+td{
+    text-align: center;
+    font-size: large;
+    color:whitesmoke
+}
+.coloumn1{
+    padding-left: 100px;
+}
+#user_extra{
+    border-radius: 50%;
+    max-width: 60px;
+}
+#computer_extra{
+    border-radius: 50%;
+    max-width: 60px;
+}
 
 @media only screen and (max-width: 500px){
     .result{
