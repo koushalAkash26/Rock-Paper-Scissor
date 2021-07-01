@@ -29,17 +29,17 @@ header{
     color:white;
     
 }
-#user-lable{
-    position: absolute;
-    top:30px;
-    left:-20px;
-    padding:2px;
-    border-radius: 4px;
-}
 #computer-lable{
     position: absolute;
     top:30px;
-    right:-30px;
+    left:-28px;
+    padding:2px;
+    border-radius: 4px;
+}
+#user-lable{
+    position: absolute;
+    top:30px;
+    right:-25px;
     padding:2px;
     border-radius: 4px;
 }
@@ -86,12 +86,7 @@ header{
 body{
     background-color: rgb(23, 23, 54);
 }
-.result1{
-    margin-top: 30px;
-    text-align: center;
-    font-size: xx-large;
-    color:whitesmoke
-}
+
 .extra{
     
     display:none;
@@ -139,20 +134,18 @@ td{
 
 @media only screen and (max-width: 500px){
     .result{
-        font-size: x-large;
+        font-size: xx-large;
     }
-    .result1{
-        font-size: large;
-    }
+    
     .score-container{
         position: relative;
     }
-    #computer-lable{
+    #user-lable{
         position: absolute;
         top:30px;
-        right:-38px;
+        right:-28px;
     }
-    #user-lable{
+    #computer-lable{
         position: absolute;
         top:30px;
         left:-28px;

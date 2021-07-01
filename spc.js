@@ -11,8 +11,17 @@ const computer_extra_td=document.getElementById("computer_extra")
 const hidden_div=document.getElementById("ext");
 const userWord="(user)".fontsize(3).sub();
 const compWord="(comp)".fontsize(3).sub();
+const winAudio=document.getElementById("win");
+const loseAudio=document.getElementById("lose");
+const drawAudio=document.getElementById("draw");
+function audio(selectedAudio){
+    selectedAudio.pause()
+    selectedAudio.currentTime=0;
+    selectedAudio.play()
+}
 
 function computerData(choice){
+    setTimeout(function(){
     if(choice=='p') {
         computer_extra_td.src="paper.jpeg"
     }
@@ -22,7 +31,7 @@ function computerData(choice){
     else {
         computer_extra_td.src="scissor.png"
     }
-    console.log(choice,user_extra_td)
+},400)
 
 }
 
@@ -39,49 +48,63 @@ function userData(choice){
     
 
 }
-function convertWord(letter){
-    if(letter==="p") return "Paper"
-    if(letter==="r") return  "Rock"
-    else return "Scissors"
-}
+
 function win(user_Choice,computer_Choice){
-    userScore=userScore+1;
-    userScore_span.innerHTML=userScore;
-    computerScore_span.innerHTML=computerScore;
+    res_p.innerHTML="";
+    setTimeout(function(){
+        userScore=userScore+1;
+        userScore_span.innerHTML=userScore;
+        computerScore_span.innerHTML=computerScore;
+        res_p.innerHTML=`You Win 🔥`;
+        document.getElementById(user_Choice).classList.add('gold-glow')
+        audio(winAudio); 
+    },400)
+    
     userData(user_Choice)
+    computer_extra_td.src=""
     computerData(computer_Choice)
     hidden_div.classList.remove("extra")
     hidden_div.classList.add("extraShow")
-    res_p.innerHTML=`${convertWord(user_Choice)}${userWord} beats ${convertWord(computer_Choice)}${compWord}.You Win 🔥`;
-    document.getElementById(user_Choice).classList.add('gold-glow')
+    //audio(winAudio);
     setTimeout(function(){document.getElementById(user_Choice).classList.remove('gold-glow')
 
-    },400)
+    },600)
 }
 function lose(user_Choice,computer_Choice){
-    computerScore=computerScore+1;
-    userScore_span.innerHTML=userScore;
-    computerScore_span.innerHTML=computerScore;
+    res_p.innerHTML="";
+    setTimeout(function(){
+        computerScore=computerScore+1;
+        userScore_span.innerHTML=userScore;
+        computerScore_span.innerHTML=computerScore;
+        res_p.innerHTML=`You Lose 💩`;
+        document.getElementById(user_Choice).classList.add('red-glow')
+        audio(loseAudio);
+        
+    },400)
     userData(user_Choice)
+    computer_extra_td.src=""
     computerData(computer_Choice)
     hidden_div.classList.remove("extra")
     hidden_div.classList.add("extraShow")
-    res_p.innerHTML=`${convertWord(user_Choice)}${userWord} get's defeated to the ${convertWord(computer_Choice)}${compWord}.You Lose 💩`;
-    document.getElementById(user_Choice).classList.add('red-glow')
+    //audio(loseAudio);
     setTimeout(function(){document.getElementById(user_Choice).classList.remove('red-glow')
 
-    },400)
+    },600)
 }
 function draw(user_Choice,computer_Choice){
-    res_p.innerHTML=`${convertWord(user_Choice)}${userWord} equal's to the ${convertWord(computer_Choice)}${compWord}.DRAW🙂`;
+    res_p.innerHTML="";
+    setTimeout(function(){ res_p.innerHTML=`DRAW🙂`;
+    document.getElementById(user_Choice).classList.add('grey-glow')
+    audio(drawAudio);},400)
     userData(user_Choice)
+    computer_extra_td.src=""
     computerData(computer_Choice)
     hidden_div.classList.remove("extra")
     hidden_div.classList.add("extraShow")
-    document.getElementById(user_Choice).classList.add('grey-glow')
+    //audio(drawAudio);
     setTimeout(function(){document.getElementById(user_Choice).classList.remove('grey-glow')
 
-    },400)
+    },600)
 
 }
 
@@ -91,6 +114,7 @@ function computerChoice(){
     return avialableChoice[computerChoice]
     
 }
+
 function gam(user_Choice) {
     let computer_Choice=computerChoice();
     switch(user_Choice+computer_Choice){

@@ -12,9 +12,9 @@
         <div>"HURRAY LET'S PLAY"</div>
     </header>
     <div class="score-container">
-        <div class="badge" id="user-lable">user</div>
         <div class="badge" id="computer-lable">comp</div>
-        <span id="user-score">0</span>:<span id="computer-score">0</span>
+        <div class="badge" id="user-lable">user</div>
+        <span id="computer-score">0</span>:<span id="user-score">0</span>
     </div>
   <!-- <div class="result">
         <p id="paragraph">Let's Start</p>
@@ -22,25 +22,32 @@
     <div id="ext" class="extra" >
         <table>
             <tr>
-                <th>User</th>
-                <th class="coloumn1">Computer</th>
+                <th>Computer</th>
+                <th class="coloumn1">User</th>
             </tr>
             <tr>
-                <td ><img id="user_extra" ></td>
-                <td class="coloumn1" ><img id="computer_extra" ></td>
+                <td><img id="computer_extra" ></td>
+                <td class="coloumn1" ><img id="user_extra" ></td>
+               
             </tr>
         </table>
 
     </div>
-    <div class="result">
-        <p id="paragraph">Let's Start</p>
-    </div>
+    
     
     <section class="btns">
     <div><img class="btn-1" id="r" src="rock-3.png"></div>
     <div><img class="btn-1" id="p" src="paper.jpeg"></div>
     <div><img class="btn-1" id="s" src="scissor.png"></div>
     </section>
+    <audio src="win.mp3" id="win"></audio>
+    <audio src="loseShort.mp3" id="lose"></audio>
+    <audio src="Draw.mp3" id="draw"></audio>
+    <div class="result">
+        <p id="paragraph">Let's Start</p>
+    </div>
+
+
    
     <!--<div class="result1">
         <p> your move 🤙🏼 </p>
